@@ -1,7 +1,9 @@
-from sqlalchemy.orm import declarative_base
+# app/models/__init__.py
 
-Base = declarative_base()
+# Importa o Base único do core/database
+from app.core.database import Base
 
+# Importa todas as models para que elas sejam registradas no Base
 from .user import User
-from .transaction import Transaction
 from .category import Category
+from .transaction import Transaction

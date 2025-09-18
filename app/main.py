@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(users.router, prefix="/api/v1/user", tags=["Users"])
+app.include_router(users.router, prefix="/users", tags=["Users"])
 
 @app.get("/")
 def root():

@@ -7,7 +7,7 @@ from app.repositories.user_repo import create_user, get_user_by_email
 from app.core.database import get_db
 from app.core.security import verify_password, get_password_hash, create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
 
-router = APIRouter(prefix="/users", tags=["users"])
+router = APIRouter(tags=["users"])
 
 @router.post("/register", response_model=UserRead)
 def register(user: UserCreate, db: Session = Depends(get_db)):
