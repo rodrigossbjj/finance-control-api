@@ -1,5 +1,3 @@
-# app/models/__init__.py
-
 # Importa o Base único do core/database
 from app.core.database import Base
 

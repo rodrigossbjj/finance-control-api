@@ -3,7 +3,7 @@ from app.models.user import User
 from app.core.security import get_password_hash
 
 def create_user(db: Session, email: str, password: str) -> User:
-    user = User(email=email, hashed_password=get_password_hash(password))
+    user = User(email=email, hashed_password=password)
     db.add(user)
     db.commit()
     db.refresh(user)

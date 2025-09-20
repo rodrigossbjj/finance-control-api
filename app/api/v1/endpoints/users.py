@@ -19,6 +19,8 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
 def login(user: UserCreate, db: Session = Depends(get_db)):
     db_user = get_user_by_email(db, user.email)
     if not db_user or not verify_password(user.password, db_user.hashed_password):
+        print(db_user.hashed_password)
+        print(user.password)
         raise HTTPException(status_code=401, detail="Email ou senha inválidos")
 
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
