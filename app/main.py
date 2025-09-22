@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Importa o router do endpoint de usuários
-from app.api.v1.endpoints import users, categories
+from app.api.v1.endpoints import users, categories, transactions
 
 # Cria a aplicação FastAPI
 app = FastAPI(
@@ -22,6 +22,7 @@ app.add_middleware(
 
 app.include_router(users.router, prefix="/users", tags=["Users"])
 app.include_router(categories.router, prefix="/categories", tags=["Categories"])
+app.include_router(transactions.router, prefix="/transactions", tags=["Transactions"])
 
 @app.get("/")
 def root():
