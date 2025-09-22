@@ -5,13 +5,14 @@ class CategoryBase(BaseModel):
     description: str | None = None
 
 class CategoryCreate(CategoryBase):
-    pass
-
+    user_id: int | None = None   
+    
 class CategoryUpdate(CategoryBase):
     pass
 
 class CategoryOut(CategoryBase):
     id: int
+    user_id: int | None = None   
 
     class Config:
         orm_mode = True

@@ -4,6 +4,8 @@ from app.core.database import get_db
 from app.models.category import Category
 from app.schemas.category_schema import CategoryCreate, CategoryUpdate, CategoryOut
 
+router = APIRouter(tags=["categories"])
+
 @router.get("/", response_model=list[CategoryOut])
 def read_categories(db: Session = Depends(get_db)):
     return db.query(Category).all()
