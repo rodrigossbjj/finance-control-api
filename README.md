@@ -27,8 +27,12 @@ Oferece autenticação com JWT, cadastro de usuários, categorias e transações
    DATABASE_URL=postgresql://usuario:senha@db:5432/finance_db
    SECRET_JWT=sua_chave_secreta
    ```
-
-3. Suba os containers com Docker:
+3. Crie um arquivo `.env.docker` na raiz do projeto:
+   ```env
+   DATABASE_URL=postgresql://usuario:senha@db:5432/finance_db
+   SECRET_JWT=sua_chave_secreta
+   ```
+4. Suba os containers com Docker:
    ```bash
    docker-compose up --build
    ```
@@ -77,6 +81,7 @@ finance-control-api/
 │   └── repositories/  # Repositórios de acesso ao banco
 │── .env.example       # Exemplo de variáveis de ambiente
 │── docker-compose.yml # Configuração Docker
+│── dockerfile         # Configuração Docker
 │── requirements.txt   # Dependências
 │── README.md          # Documentação
 ```
